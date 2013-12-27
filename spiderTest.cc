@@ -1,7 +1,7 @@
 
 #include "netlib/curlBase.h"
 #include "regex/regexBase.h"
-
+#include "urlManager.h"
 
 
 int main (int argc, char const *argv[])
@@ -12,6 +12,8 @@ int main (int argc, char const *argv[])
 	
 	vector<string> res;
 	CRegex *reg=new CRegex();
+	
+	CUrlManager *m=new CUrlManager();
 	
 	if(netSpider->getUrl(url) == true)
 	{
@@ -34,8 +36,14 @@ int main (int argc, char const *argv[])
 	
 	reg->releaseRes();
 	
-	for(auto i=res.begin();i!=res.end();i++)
-		cout <<"match [ " << *i << " ]" <<endl;
+	m->insertToMap(res);
+	
+	cout << " RES SIZE : " << res.size() << endl;
+	cout << " MAP SIZE : " << m->getSize() << endl;
+	
+	
+	//for(auto i=res.begin();i!=res.end();i++)
+	//	cout <<"match [ " << *i << " ]" <<endl;
 	/* code */
 	return 0;
 }

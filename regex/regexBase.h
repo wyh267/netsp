@@ -1,4 +1,5 @@
-
+#ifndef _REGEX_H_
+#define _REGEX_H_
 
 #include <iostream>
 #include <string>
@@ -16,6 +17,13 @@ public:
 	
 	~CRegex(){}
 	
+	
+	
+	//
+	// 解析页面的url地址
+	// 输入 : 页面内容
+	// 输出 : 有合法的url返回true,没有返回false
+	//
 	bool parseURL(string contents){
 		const regex pattern("(http|https)://([\\w\\./]*\\.(html|htm|aspx|asp|php|jsp))");
 		//定义结果
@@ -27,10 +35,7 @@ public:
 			//std::cout << *i << std::endl;
 			m_urls.push_back(*i);
 		}
-		
-		
-		
-		
+			
 		if(m_urls.size()>0)
 			return true;
 		
@@ -39,11 +44,22 @@ public:
 	}
 	
 	
+	//
+	// 获取url地址列表
+	// 输入 : 无
+	// 输出 : 返回全部url地址
+	//
 	vector<string> getUrls(){
 		return m_urls;
 	}
 	
 	
+	
+	//
+	// 释放url地址列表
+	//
+	//
+	//
 	bool releaseRes(){
 		
 		for(vector<string>::iterator i=m_urls.begin();i!=m_urls.end();++i)
@@ -57,8 +73,13 @@ public:
 	
 private:
 	
-	vector<string> m_urls;
+	vector<string> m_urls;   //url地址列表
 
 
 
 };
+
+
+
+
+#endif

@@ -1,3 +1,7 @@
+#ifndef _CURLBASE_H_
+#define _CURLBASE_H_
+
+
 #include <stdio.h>
 #include <curl/curl.h>
 #include <stdlib.h>
@@ -161,3 +165,9 @@ private:
 	}
 
 };
+
+
+
+
+
+#endif
