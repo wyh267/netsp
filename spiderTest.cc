@@ -32,6 +32,8 @@ int main (int argc, char const *argv[])
 		return 0;
 	}
 	
+	reg->releaseRes();
+	
 	for(auto i=res.begin();i!=res.end();i++)
 		cout <<"match [ " << *i << " ]" <<endl;
 	/* code */
