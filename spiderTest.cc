@@ -6,7 +6,10 @@
 
 int main (int argc, char const *argv[])
 {
+	CUrlManager *m=new CUrlManager();
+	m->startManager("www.sina.com.cn");
 	
+	/*
 	string url="news.163.com";
 	CNetBase *netSpider=new CNetBase();
 	
@@ -40,7 +43,7 @@ int main (int argc, char const *argv[])
 	
 	cout << " RES SIZE : " << res.size() << endl;
 	cout << " MAP SIZE : " << m->getSize() << endl;
-	
+	*/
 	
 	//for(auto i=res.begin();i!=res.end();i++)
 	//	cout <<"match [ " << *i << " ]" <<endl;

@@ -25,7 +25,7 @@ public:
 	// 输出 : 有合法的url返回true,没有返回false
 	//
 	bool parseURL(string contents){
-		const regex pattern("(http|https)://([\\w\\./]*\\.(html|htm|aspx|asp|php|jsp))");
+		const regex pattern("(http|https)://([\\w\\./]*\\.htm)");
 		//定义结果
 		match_results<string::const_iterator> result;
 		//开始匹配url
