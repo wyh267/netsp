@@ -5,22 +5,21 @@
 #include <string.h>
 #include <string>
 #include <iostream>
-
 using namespace std;
 
 class CNetBase {
+	
 public:
 	CNetBase(){
 		m_init=0;
 		m_offset=0;
 		m_contents="";
 		curl = curl_easy_init();        //初始化一个CURL类型的指针
-		//m_size=0;
 	}
 	
 	~CNetBase(){
 		//m_contents.~string();
-		free(p_data);
+		//free(p_data);
 	}
 	
 	
@@ -144,9 +143,7 @@ private:
 	int m_init;
 	char *p_data;  	//内存数据指针地址
 	int m_offset; 	//偏移量(数据区长度)
-	string m_contents;
-	//int m_size;		//数据区长度
-	
+	string m_contents;	
     CURL *curl;             //定义CURL类型的指针
 	CURLcode res;           //定义CURLcode类型的变量，保存返回状态码
 
@@ -161,8 +158,6 @@ private:
 		m_offset=0;
 		string().swap(m_contents);
 		m_contents="";
-		//curl = curl_easy_init();        //初始化一个CURL类型的指针
 	}
-
 
 };

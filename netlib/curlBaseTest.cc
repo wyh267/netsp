@@ -1,6 +1,5 @@
 #include "curlBase.h"
 
-
 //Test case
 int main (int argc, char const *argv[])
 {
