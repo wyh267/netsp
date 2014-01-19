@@ -1,7 +1,10 @@
 #ifndef _CURLBASE_H_
 #define _CURLBASE_H_
+/**********************
 
+网络基础链接库，负责网络连接和数据获取，采用curl库，编译时需要添加-lcurl
 
+***********************/
 #include <stdio.h>
 #include <curl/curl.h>
 #include <stdlib.h>
@@ -148,8 +151,8 @@ namespace netspider
 	
 	private:
 		int m_init;
-		char *p_data;  	//内存数据指针地址
-		int m_offset; 	//偏移量(数据区长度)
+		char *p_data;  			//内存数据指针地址
+		int m_offset; 			//偏移量(数据区长度)
 		string m_contents;	
 		CURL *curl;             //定义CURL类型的指针
 		CURLcode res;           //定义CURLcode类型的变量，保存返回状态码
@@ -157,7 +160,7 @@ namespace netspider
 
 
 		//
-		// 重置变量
+		// 重置变量，实际上是释放操作
 		//
 		//
 		void resetStatus(){

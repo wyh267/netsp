@@ -1,6 +1,12 @@
 #ifndef _REGEX_H_
 #define _REGEX_H_
 
+/**********************
+
+正则表达式封装
+
+***********************/
+
 #include <iostream>
 #include <string>
 #include <regex>

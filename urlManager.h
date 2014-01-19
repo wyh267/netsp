@@ -84,7 +84,7 @@ namespace netspider
 						//cout << " String Len : " << netSpider->getContent().size() << endl;
 						m_urls_delete_map[(*it).first]=1;
 						it=m_urls_map.erase(it);
-					
+						//分析连接地址并保存
 						if(reg->parseURL(netSpider->getContent())==true)
 						{
 							res=reg->getUrls();
@@ -115,7 +115,7 @@ namespace netspider
 	
 	private:
 	
-		map<string,int> m_urls_map; //等待处理的url列表,后一个参数表示已经存在此链接
+		map<string,int> m_urls_map; 		//等待处理的url列表,后一个参数表示已经存在此链接
 		map<string,int> m_urls_delete_map;
 
 
